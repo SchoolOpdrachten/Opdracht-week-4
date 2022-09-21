@@ -12,7 +12,7 @@ public class DemografischRapport : Rapport
 
     public async Task<int> AantalGebruikers()
     {
-        return await _context.Gebruikers.CountAsync();
+        return _context.Gebruikers.Count();
     }
     public async Task<bool> AlleGastenHebbenReservering()
     {
@@ -42,13 +42,13 @@ public class DemografischRapport : Rapport
     {
         return null;
     }
-    public IEnumerable<string, int> VerdelingPerDag()
+    public IEnumerable<(string, int)> VerdelingPerDag()
     {
         return null;
     }
-    public IEnumerable<Gast, int> GastenMetActiviteit(IEnumerable<Gast> gasten)
+    public IEnumerable<(Gast, int)> GastenMetActiviteit(IEnumerable<Gast> gasten)
     {
-        return null
+        return null;
     }
     public async Task<int> FavorietCorrect()
     {
