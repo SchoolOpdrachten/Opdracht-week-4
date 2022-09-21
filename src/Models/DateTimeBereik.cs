@@ -1,6 +1,7 @@
 
 public class DateTimeBereik
 {
+    public int Id { get; set; }
     public DateTime Begin { get; set; }
     public DateTime Eind { get; set; }
 

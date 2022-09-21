@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 public class Medewerker : Gebruiker
 {
-    public int Id { get; set; }
+    public new int Id { get; set; }
     public Medewerker(string email) : base(email) {}
 
     public List<Medewerker> Doet { get; set; }

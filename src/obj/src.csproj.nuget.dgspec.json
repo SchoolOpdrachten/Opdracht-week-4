@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\Opdracht-week-4\\src\\src.csproj": {}
+    "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj": {}
   },
   "projects": {
-    "C:\\repos\\Opdracht-week-4\\src\\src.csproj": {
+    "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\Opdracht-week-4\\src\\src.csproj",
+        "projectUniqueName": "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj",
         "projectName": "src",
-        "projectPath": "C:\\repos\\Opdracht-week-4\\src\\src.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\Opdracht-week-4\\src\\obj\\",
+        "projectPath": "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
