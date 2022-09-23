@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+
+[Owned]
 public class DateTimeBereik
 {
     public int Id { get; set; }

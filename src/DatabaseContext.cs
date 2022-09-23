@@ -31,6 +31,8 @@ public class DatabaseContext : DbContext
 
     public async Task<bool> Boek(Gast gast, Attractie attractie, DateTimeBereik datum)
     {
+        if (gast == null || attractie == null|| datum == null) return false;
+
         var reservering = new Reservering
         {
             Gast = gast,

@@ -9,9 +9,8 @@ public class Rapport
     {
         
     }
-    public async Task VoerPeriodiekUit()
+    public async Task VoerPeriodiekUit(Func<bool> stop)
     {
         
     }
-
 }

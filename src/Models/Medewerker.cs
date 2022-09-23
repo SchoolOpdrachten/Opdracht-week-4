@@ -6,6 +6,6 @@ public class Medewerker : Gebruiker
     public new int Id { get; set; }
     public Medewerker(string email) : base(email) {}
 
-    public List<Medewerker> Doet { get; set; }
-    public List<Medewerker> Coordinaat { get; set; }
+    public List<Onderhoud> Doet { get; set; }
+    public List<Onderhoud> Coordinaat { get; set; }
 }

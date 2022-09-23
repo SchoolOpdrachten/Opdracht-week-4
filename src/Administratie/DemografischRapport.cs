@@ -2,17 +2,17 @@
 
 public class DemografischRapport : Rapport
 {
-    private DatabaseContext _context;
+    private DatabaseContext context;
     public override string Naam() { return "DemografischRapport"; }
     public override async Task<string> Genereer() { return "DemografischRapportTask"; }
     public DemografischRapport(DatabaseContext context)
     {
-        _context = context;
+        this.context = context;
     }
 
     public async Task<int> AantalGebruikers()
     {
-        return _context.Gebruikers.Count();
+        return context.Gebruikers.Count();
     }
     public async Task<bool> AlleGastenHebbenReservering()
     {
@@ -40,15 +40,15 @@ public class DemografischRapport : Rapport
     }
     public IEnumerable<Gast> Blut(IEnumerable<Gast> gasten)
     {
-        return null;
+        return new List<Gast>();
     }
     public IEnumerable<(string, int)> VerdelingPerDag()
     {
-        return null;
+        return new List<(string, int)>();
     }
     public IEnumerable<(Gast, int)> GastenMetActiviteit(IEnumerable<Gast> gasten)
     {
-        return null;
+        return new List<(Gast, int)>();
     }
     public async Task<int> FavorietCorrect()
     {
