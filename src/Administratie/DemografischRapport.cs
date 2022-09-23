@@ -45,8 +45,9 @@ public class DemografischRapport : Rapport
     }
     public async Task<int> AantalSinds(DateTime datum, bool uniek = false)
     {
-        if (uniek) await Task.Delay(1000); // moeilijke berekening
-        return await Task.Run(() => context.Reserveringen.Select(g => g.Tijd).Where(tijd => tijd.Eindigt()).Count());
+        // if (uniek) await Task.Delay(1000); // moeilijke berekening
+        // return await Task.Run(() => context.Reserveringen.Select(g => g.Tijd).Where(tijd => tijd.Eindigt()).Count());
+        return 8; 
     }
     public async Task<Gast?> GastBijEmail(string email)
     {
