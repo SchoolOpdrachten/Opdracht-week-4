@@ -70,17 +70,20 @@ public class DemografischRapport : Rapport
     {
         return gasten.Select(g => g).Where(c => c.Credits < 0);
     }
-    public async Task<(string dag , int aantal)> VerdelingPerDag()
+
+    // VerdelingPerDag geeft het gemiddeld aantal nieuwe bezoekers per dag van de week (gebruik DateTime.DayOfWeek). 
+    //Tupels en de methode DayOfWeek kunnen niet vertaald worden naar SQL, dus roep eerst een ToList aan.
+    public async Task<IEnumerable<(string dag , int aantal)>> VerdelingPerDag()
     {
-        return ("asdf", 3);
+        return new List<(string, int)> { ("asdf", 3)};
     }
-    public IEnumerable<(Gast, int)> GastenMetActiviteit(IEnumerable<Gast> gasten)
+    public IEnumerable<(Gast gast, int aantalReseveringen)> GastenMetActiviteit(IEnumerable<Gast> gasten)
     {
-        return new List<(Gast, int)>();
+        return gasten.Select(g => (g, g.Reserveringen.Count()));
     }
     public async Task<int> FavorietCorrect()
     {
-        return 0;
+        return context.Gasten.Select( g => g).Count();
     }
 
 }

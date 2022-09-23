@@ -18,33 +18,36 @@ public class DatabaseContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder b)
     {
-        // b.Entity<Gast>().HasData(
-        //     new Gast("mike@hhs.nl") { Credits = 100, GeboorteDatum = DateTime.Now, EersteBezoek = DateTime.Now },
-        //     new Gast("gast@hhs.nl") { Credits = 100, GeboorteDatum = DateTime.Now, EersteBezoek = DateTime.Now },
-        //     new Gast("gast2@hhs.nl") { Credits = 100, GeboorteDatum = DateTime.Now, EersteBezoek = DateTime.Now }
-        // );
-        // b.Entity<Medewerker>().HasData(
-        //     new Medewerker("medewerker@hhs.nl") { Id = 1 },
-        //     new Medewerker("medewerker2@hhs.nl") { Id = 2 },
-        //     new Medewerker("medewerker3@hhs.nl") { Id = 3 }
-        // );
+
     }
 
+
+    // er wordt gezegd nog gebruikt te maken van Transactions. Maar weet nog niet hoe ik die moet implementeren
     public async Task<bool> Boek(Gast gast, Attractie attractie, DateTimeBereik datum)
     {
-        if (gast == null || attractie == null|| datum == null) return false;
+        if (gast == null || attractie == null || datum == null) return false;
 
-        var reservering = new Reservering
+        await attractie.Semaphore.WaitAsync();
+        using var transaction = Database.BeginTransaction();
+        try
         {
-            Gast = gast,
-            Attractie = attractie,
-            Tijd = datum
-        };
+            if (!await attractie.Vrij(this, datum)) return false;
 
-        gast.Reserveringen.Add(reservering);
-        Reserveringen.Add(reservering);
-        await SaveChangesAsync();
+            var reservering = new Reservering
+            {
+                Gast = gast,
+                Attractie = attractie,
+                Tijd = datum
+            };
+            gast.Credits--;
 
+            gast.Reserveringen.Add(reservering);
+            Reserveringen.Add(reservering);
+            await SaveChangesAsync();
+            transaction.Commit();
+
+        }
+        finally { attractie.Semaphore.Release(); }
         return true;
     }
 }

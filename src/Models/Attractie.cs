@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 public class Attractie
@@ -7,6 +8,8 @@ public class Attractie
     {
         Naam = naam;
     }
+    
+    [NotMapped] public readonly SemaphoreSlim Semaphore = new SemaphoreSlim(1, 1);
 
     [Key]
     public int Id { get; set; }
