@@ -9,6 +9,7 @@ public class DatabaseContext : DbContext
     public DbSet<Onderhoud> Onderhouds { get; set; }
     public DbSet<Reservering> Reserveringen { get; set; }
     public DbSet<Attractie> Attracties { get; set; }
+    public DbSet<Onderhoud> Onderhoud { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder b)
     {

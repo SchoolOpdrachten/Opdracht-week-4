@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f5IDhOXMvo004bZrvNUyiD/E2b5x8gAd8wVbJ005woWKAe73kUp6NvGWEpRtKZgMtdlj4CLwqh6ywUcqP5JUfA==",
+  "dgSpecHash": "6YCg52nqDlNURI2p6drhLIlH2nFHtX+70jxXuMKZ07KnO9Beh9Qatsep4q3wbJ18Ofy//5c5G0A5jAsVY77EvQ==",
   "success": true,
-  "projectFilePath": "C:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj",
+  "projectFilePath": "c:\\repos\\WPFW projects\\Opdracht-week-4\\src\\src.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

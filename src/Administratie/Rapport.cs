@@ -1,16 +1,16 @@
 
 
-public class Rapport
+public abstract class Rapport
 {
-    public virtual string Naam() { return "Rapport"; }
-    public virtual async Task<string> Genereer() { return "RapportTask"; }
-
-    public async Task VoerUit()
-    {
-        
-    }
+    public abstract string Naam();
+    public abstract Task<string> Genereer();
+    public async Task VoerUit() => await File.WriteAllTextAsync(Naam() + ".txt", await Genereer());
     public async Task VoerPeriodiekUit(Func<bool> stop)
     {
-        
+        while (!stop())
+        {
+            await VoerUit();
+            await Task.Delay(1000);
+        }
     }
 }

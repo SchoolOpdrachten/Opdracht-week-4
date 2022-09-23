@@ -3,6 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 public class Attractie
 {
+    public Attractie(string naam)
+    {
+        Naam = naam;
+    }
+
     [Key]
     public int Id { get; set; }
     public string Naam { get; set; }

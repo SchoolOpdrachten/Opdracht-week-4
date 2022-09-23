@@ -8,7 +8,7 @@ public class Gast : Gebruiker
     public DateTime GeboorteDatum { get; set; }
     public DateTime EersteBezoek { get; set; }
 
-    public Gast? Begeleid { get; set; }
+    public Gast? Begeleider { get; set; }
     public List<Reservering>? Reserveringen { get; set; }
     public Attractie? HeeftFavorieteAttractie { get; set; }
 
