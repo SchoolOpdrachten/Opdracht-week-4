@@ -16,13 +16,6 @@ public class DatabaseContext : DbContext
         b.UseSqlite("Data Source=database.db");
     }
 
-    protected override void OnModelCreating(ModelBuilder b)
-    {
-
-    }
-
-
-    // er wordt gezegd nog gebruikt te maken van Transactions. Maar weet nog niet hoe ik die moet implementeren
     public async Task<bool> Boek(Gast gast, Attractie attractie, DateTimeBereik datum)
     {
         if (gast == null || attractie == null || datum == null) return false;

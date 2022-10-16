@@ -76,7 +76,7 @@ public class DemografischRapport : Rapport
     //Tupels en de methode DayOfWeek kunnen niet vertaald worden naar SQL, dus roep eerst een ToList aan.
     public async Task<IEnumerable<(string dag , int aantal)>> VerdelingPerDag()
     {
-        return new List<(string, int)> { ("asdf", 3)};
+        return await Task.Run(() => context.Reserveringen.Select(r => r.Tijd).GroupBy(t => t.Begin.DayOfWeek).ToList().Select(g => (g.Key.ToString(), g.Count())).ToList());
     }
     public IEnumerable<(Gast gast, int aantalReseveringen)> GastenMetActiviteit(IEnumerable<Gast> gasten)
     {
